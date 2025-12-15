@@ -4,19 +4,13 @@
 using namespace std;
 
 // Recursion
-// int solve(vector<int>& cost, int n)
-// {
-//     if(n==0 || n==1)
-//     return cost[n];
+int solve0(vector<int>& cost, int n)
+{
+    if(n==0 || n==1)
+    return cost[n];
 
-//     return (cost[n] + min(solve(cost, n-1), solve(cost, n-2)));
-// }
-
-// int minCostClimbingStairs(vector<int>& cost)
-// {
-//     int n = cost.size();
-//     return min(solve(cost, n-1), solve(cost, n-2));
-// }
+    return (cost[n] + min(solve0(cost, n-1), solve0(cost, n-2)));
+}
 
 // Recursion + Memoization
 int solve(vector<int>& cost, int n, vector<int>& dp)
@@ -44,6 +38,22 @@ int solve2(vector<int>& cost, int n)
     }
 
     return min(dp[n-1], dp[n-2]);
+}
+
+// Spce Optimised
+int solve3(vector<int>& cost, int n)
+{
+    int prev2 = cost[0];
+    int prev1 = cost[1];
+
+    for(int i=2 ; i<n ; i++)
+    {
+        int curr = cost[i] + min(prev1, prev2);
+        prev2 = prev1;
+        prev1 = curr;
+    }
+
+    return  min(prev1, prev2);
 }
 
 int minCostClimbingStairs(vector<int>& cost)
