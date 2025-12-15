@@ -1,4 +1,4 @@
-# Data Structures & Algorithms – Learning & Practice
+# Data Structures & Algorithms - Learning & Practice
 
 This repository contains my **Data Structures and Algorithms (DSA) learning and practice work**.  
 Everything I study, practice, and implement while learning DSA is added here in an organized manner.
@@ -30,9 +30,9 @@ The goal of this repository is to build **strong problem-solving skills** and **
 
 ## Languages & Tools
 
-- Programming Languages: C++ / Java (as used during learning)
+- Programming Languages: C, C++, Java, Python (as used during learning)
 - Tools: Git, GitHub, VS Code
-- Practice Platforms: LeetCode, CodeStudio, Codeforces (for problem selection)
+- Practice Platforms: LeetCode, Coding Ninjas, CodeStudio, Codeforces (for problem selection)
 
 ---
 
