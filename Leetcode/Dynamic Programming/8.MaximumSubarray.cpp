@@ -30,15 +30,32 @@ int solve(vector<int>& nums, int len)
 }
 
 // Recursion + Memoisation
-int solve2(vector<int>& nums, int len, vector<int>& dp)
+int solve2(vector<int>& nums, int n, vector<int>& dp)
 {
-    int a;
+    if(n == 0)
+    return dp[n] = nums[0];
+
+    if(dp[n]!=-1)
+    return dp[n];
+
+    dp[n] = max(nums[n], nums[n] + solve2(nums, n - 1, dp));
+
+    return dp[n];
 }
 
 int maxSubArray(vector<int>& nums)
 {
-    vector<int> dp(nums.size()+1, -1);
-    return solve2(nums, 1, dp);
+    int n = nums.size();
+    vector<int> dp(n, -1);
+
+    for (int i = 0; i < n; i++)
+        solve2(nums, i, dp);
+
+    int ans=dp[0];
+    for(int i: dp)
+    ans = max(ans, i);
+
+    return ans;
 }
 
 int main()
