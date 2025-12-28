@@ -33,48 +33,39 @@ int solve(int n, vector<vector<int>>& points, int invalid)
 }
 
 // Recursion + Memoisation
-int solve2(int n, vector<vector<int>>& points, int invalid, vector<int>& dp)
+int solve(int day, int last, vector<vector<int>>& points, vector<vector<int>>& dp)
 {
-    // Base Case
-    if(n==0)
+    if(day == 0)
     {
-        int merit=0;
-        for(int i=0 ; i<3 ; i++)
+        int maxi = 0;
+        for(int task = 0; task < 3; task++)
         {
-            if(i!=invalid)
-            merit = max(merit, points[0][i]);
+            if(task != last)
+                maxi = max(maxi, points[0][task]);
         }
-        dp[n] = merit;
-        return dp[n];
+        return dp[day][last] = maxi;
     }
 
-    if(dp[n] != -1)
-    return dp[n];
+    if(dp[day][last] != -1)
+        return dp[day][last];
 
-    int merit1 = -1;
-    int merit2 = -1;
-    int merit3 = -1;
-    for(int i=0 ; i<3 ; i++)
+    int maxi = 0;
+    for(int task = 0; task < 3; task++)
     {
-        if(i != invalid && merit1 == -1)
-        merit1 = points[n][i] + solve2(n-1, points, i, dp);
-        if(i != invalid && merit1 != -1 && merit2 == -1)
-        merit2 = points[n][i] + solve2(n-1, points, i, dp);
-        if(i != invalid && merit1 != -1 && merit2 != -1)
-        merit3 = points[n][i] + solve2(n-1, points, i, dp);
+        if(task != last)
+        {
+            int merit = points[day][task] + solve(day - 1, task, points, dp);
+            maxi = max(maxi, merit);
+        }
     }
 
-    dp[n] = max(merit1, merit2);
-    dp[n] = max(dp[n], merit3);
-
-    return dp[n];
+    return dp[day][last] = maxi;
 }
 
-int ninjaTraining(int n, vector<vector<int>> &points)
+int ninjaTraining(int n, vector<vector<int>>& points)
 {
-    vector<int> dp(n+1, -1);
-    // return solve(n-1, points, -1);
-    return solve2(n-1, points, -1, dp);
+    vector<vector<int>> dp(n, vector<int>(4, -1));
+    return solve(n - 1, 3, points, dp);
 }
 
 int main()
