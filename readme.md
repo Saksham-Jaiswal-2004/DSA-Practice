@@ -1,63 +1,75 @@
-# Data Structures & Algorithms - Learning & Practice
+# Data Structures & Algorithms — Learning & Practice
 
-This repository contains my **Data Structures and Algorithms (DSA) learning and practice work**.  
-Everything I study, practice, and implement while learning DSA is added here in an organized manner.
-
-The goal of this repository is to build **strong problem-solving skills** and **solid core computer science fundamentals** through consistent practice.
+Curated solutions and daily practice across core DSA topics and competitive programming. The goal is to build strong problem‑solving skills and solid CS fundamentals through consistent, structured work.
 
 ---
 
-## Objective
-
-- Learn DSA concepts in depth
-- Improve logical thinking and problem-solving ability
-- Maintain a structured record of my DSA journey
-- Prepare for technical interviews and competitive programming
-- Track progress over time
+## Objectives
+- Learn DSA concepts in depth and apply them
+- Strengthen logical thinking and coding fluency
+- Prepare for interviews and contests (speed + accuracy)
+- Track progress and revisit/refactor older solutions
 
 ---
 
-## Repository Structure
+## Folder Map
+- [Leetcode](Leetcode) — Interview‑focused problems and topic coverage
+	- Overview: [Leetcode/readme.md](Leetcode/readme.md)
+- [Codeforces](Codeforces) — Contest solutions optimized for time limits
+	- Overview: [Codeforces/readme.md](Codeforces/readme.md)
+- [CodeChef](CodeChef) — Practice + contests with performance focus
+	- Overview: [CodeChef/readme.md](CodeChef/readme.md)
+- [Coding Ninjas](Coding%20Ninjas) — Course‑structured DSA practice
+	- Overview: [Coding Ninjas/readme.md](Coding%20Ninjas/readme.md)
+- [DSA Practise](DSA%20Practise) — Daily practice by topic
 
-- Code is organized **concept-wise**
-- Each folder represents a specific concept or problem category
-- Solutions focus on **clarity and correctness**
-- The repository evolves as I continue learning
+---
 
-> This is a learning-oriented repository. Code may be refactored or improved as my understanding grows.
+## Topics Covered
+- Arrays & Strings: two‑pointers, sliding window, prefix/suffix
+- Linked Lists: reversal, merging, cycle detection
+- Stacks & Queues: monotonic stacks, BFS patterns
+- Trees & BST: traversals, LCA, serialization
+- Graphs: BFS/DFS, shortest paths, topological sort
+- Dynamic Programming: memoization, tabulation (1D/2D)
+- Greedy: locally optimal choices → global optimum
+- Binary Search: boundary finding, rotated arrays
 
 ---
 
 ## Languages & Tools
-
-- Programming Languages: C, C++, Java, Python (as used during learning)
+- Languages: C++ (primary), Java, Python, C (as needed)
 - Tools: Git, GitHub, VS Code
-- Practice Platforms: LeetCode, Coding Ninjas, CodeStudio, Codeforces (for problem selection)
+- Platforms: LeetCode, Codeforces, CodeChef, Coding Ninjas
 
 ---
 
-## How This Repository Is Used
+## How to Use
+1. Pick a folder/topic based on your goal (interview vs contest)
+2. Attempt the problem independently first
+3. Compare solution approaches and analyze complexity
+4. Revisit and refactor with alternative patterns when useful
 
-1. Learn a concept
-2. Practice related problems
-3. Add implementations to the repository
-4. Revisit and improve solutions when required
+---
+
+## Conventions
+- Clear, readable implementations first; optimize next
+- Include approach notes and time/space complexity where applicable
+- File naming: numbered prefixes + descriptive names (e.g., `08.NextPermutation.cpp`)
 
 ---
 
 ## Contribution
-
-This is a **personal learning repository**.  
-Suggestions and improvements are welcome through issues or pull requests.
+This is a personal learning repository. Suggestions and improvements are welcome via issues or pull requests.
 
 ---
 
 ## Author
-
-**Saksham Jaiswal**
+Saksham Jaiswal
 
 ---
 
 ## Note
+Focused on learning and consistency, not just archiving final answers.
 
-This repository is meant for **learning, practice, and consistency**, not just storing final answers.
+Last Updated: December 2025
