@@ -1,4 +1,4 @@
-# Data Structures & Algorithms — Learning & Practice
+# Data Structures & Algorithms - Learning & Practice
 
 Curated solutions and daily practice across core DSA topics and competitive programming. The goal is to build strong problem‑solving skills and solid CS fundamentals through consistent, structured work.
 
