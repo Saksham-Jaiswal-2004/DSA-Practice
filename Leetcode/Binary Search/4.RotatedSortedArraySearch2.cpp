@@ -4,7 +4,42 @@
 using namespace std;
 
 bool search(vector<int>& nums, int target)
-{}
+{
+    int start = 0;
+    int end = nums.size() - 1;
+    int middle;
+
+    while(start <= end)
+    {
+        middle = start + (end-start)/2;
+        if(nums[middle] == target)
+        return true;
+
+        if(nums[start] == nums[middle] && nums[middle] == nums[end])
+        {
+            start++;
+            end--;
+            continue;
+        }
+
+        if(nums[start] <= nums[middle])
+        {
+            if(nums[start] <= target && nums[middle] >= target)
+            end = middle - 1;
+            else
+            start = middle + 1;
+        }
+        else
+        {
+            if(nums[middle] <= target && nums[end] >= target)
+            start = middle + 1;
+            else
+            end = middle - 1;
+        }
+    }
+
+    return false;
+}
 
 int main()
 {
