@@ -1,13 +1,52 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
+#include<math.h>
 
 using namespace std;
 
+long long canEat(vector<int>& piles, int bananasToEat)
+{
+    long long total = 0;
+
+    for(int i: piles) 
+    total += ceil(double(i)/double(bananasToEat));
+
+    return total;
+}
+
 int minEatingSpeed(vector<int>& piles, int h)
-{}
+{
+    int maxVal = *max_element(piles.begin(), piles.end());
+
+    int start = 1;
+    int end = maxVal;
+    int middle = start + (end-start)/2;
+
+    while(start<=end)
+    {
+        middle = start + (end-start)/2;
+        long long check = canEat(piles, middle);
+
+        if(check <= h)
+        end = middle - 1;
+        else
+        start = middle + 1;
+    }
+
+    return start;
+}
 
 int main()
 {
+    vector<int> data = {3,6,7,11};
+    int totalHours = 8;
+
+    for(int i: data)
+    cout<<i<<", ";
+    cout<<"\nTotal Hours: "<<totalHours<<endl<<endl;
+
+    cout<<"Minimum Bananas/hour: "<<minEatingSpeed(data, totalHours)<<endl;
     return 0;
 }
 
